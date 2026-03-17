@@ -1,11 +1,4 @@
-# FastAPI Example App
 
-![fastapi-0.115.8](https://img.shields.io/badge/fastapi-0.115.8-009688?logo=fastapi&logoColor=white) ![python-3.13](https://img.shields.io/badge/python-3.13-3776AB?logo=python&logoColor=white) [![CodeQL](https://github.com/KenMwaura1/Fast-Api-example/actions/workflows/codeql.yml/badge.svg)](https://github.com/KenMwaura1/Fast-Api-example/actions/workflows/codeql.yml) [![Docker Compose Actions Workflow](https://github.com/KenMwaura1/Fast-Api-example/actions/workflows/docker-image.yml/badge.svg)](https://github.com/KenMwaura1/Fast-Api-example/actions/workflows/docker-image.yml)
-
-[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/kenmwaura1)
-[![Twitter](https://badgen.net/badge/icon/twitter?icon=twitter&label=Follow&on)](https://twitter.com/Ken_Mwaura1)
-
-A production-ready asynchronous REST API built with [FastAPI](https://fastapi.tiangolo.com/), featuring CRUD operations for notes management. The API includes advanced features like search, filtering, pagination, and is fully containerized with Docker.
 
 ## ✨ Features
 
@@ -318,14 +311,7 @@ To use GitHub Actions, add these secrets to your repository:
 docker pull kenmwaura1/fast-api-example:latest
 ```
 
-## 📖 Resources
 
-- [Official Tutorial](https://dev.to/ken_mwaura1/getting-started-with-fast-api-and-docker-515) - Complete step-by-step guide
-- [API Documentation](API.md) - Comprehensive API endpoint reference
-- [Development Guide](DEVELOPMENT.md) - Setup and development workflow
-- [Contributing Guide](CONTRIBUTING.md) - Guidelines for contributing
-- [FastAPI Documentation](https://fastapi.tiangolo.com/)
-- [Docker Documentation](https://docs.docker.com/)
 
 ## 🐛 Troubleshooting
 
@@ -484,81 +470,4 @@ cat src/tests/conftest.py
 pytest src -v -s
 ```
 
-### Performance Issues
 
-#### Slow API responses
-
-1. **Check database performance**:
-   ```sql
-   -- Log in to database
-   psql -U hello_fastapi -d fast_api_dev
-   
-   -- Check table size
-   SELECT pg_size_pretty(pg_total_relation_size('notes'));
-   ```
-
-2. **Check query logs** (if enabled)
-
-3. **Verify indexes exist** on frequently queried columns
-
-#### High memory usage
-
-- Reduce `limit` parameter in queries (max is 100)
-- Check for memory leaks in custom code
-- Monitor using `docker stats` (for Docker deployment)
-
-### Frontend Issues
-
-#### Vue frontend can't connect to API
-
-1. **Verify API is running**:
-   ```bash
-   curl http://localhost:8000/ping
-   ```
-
-2. **Check CORS configuration** in `.env`:
-   ```env
-   ALLOWED_ORIGINS=http://localhost:5173,http://localhost
-   ```
-
-3. **Check frontend URL** in browser matches one of allowed origins
-
-### Still Having Issues?
-
-1. **Check the documentation**:
-   - [API.md](API.md) - API reference
-   - [DEVELOPMENT.md](DEVELOPMENT.md) - Development guide
-
-2. **Search existing issues**:
-   - [GitHub Issues](https://github.com/KenMwaura1/Fast-Api-example/issues)
-
-3. **Open a new issue** with:
-   - Clear description of the problem
-   - Steps to reproduce
-   - Error messages and logs
-   - Environment details (OS, Python version, etc.)
-
-4. **Ask for help**:
-   - GitHub Discussions
-   - Stack Overflow (tag with `fastapi`, `postgresql`)
-
-## 📝 License
-
-This project is licensed under the [MIT License](https://choosealicense.com/licenses/mit/).
-
-## 👤 Author
-
-**Kennedy Mwaura**
-
-- Twitter: [@Ken_Mwaura1](https://twitter.com/Ken_Mwaura1)
-- GitHub: [@KenMwaura1](https://github.com/KenMwaura1)
-
-## ☕ Support
-
-If you find this project helpful, consider:
-
-[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/kenmwaura1)
-
----
-
-**Built with ❤️ using FastAPI**
